@@ -1,10 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class SnakeController : MonoBehaviour
+public class SnakeController2 : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
     [SerializeField] private float bodySpeed;
@@ -21,9 +20,14 @@ public class SnakeController : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("Multiplayer") == 1)
         {
-            transform.position = new Vector3(3.92f, 1f, 0f);
+            gameObject.SetActive(true);
+        }
+        else
+        {
+            gameObject.SetActive(false);
         }
     }
+
     void Start()
     {
         PlayerPrefs.SetInt("Score", 0);
@@ -46,7 +50,7 @@ public class SnakeController : MonoBehaviour
         transform.position += transform.forward * moveSpeed * Time.deltaTime;
 
         //steer
-        float steerDirection = Input.GetAxis("Horizontal");
+        float steerDirection = Input.GetAxis("HorizontalPlayer2");
         transform.Rotate(Vector3.up * steerDirection * steerSpeed * Time.deltaTime);
 
         int index = 0;

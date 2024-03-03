@@ -8,22 +8,30 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI currentScore;
     [SerializeField] private GameObject endingPanel;
+    [SerializeField] private GameObject stickController;
 
     private int bestScore = 0;
 
     private void Awake()
     {
         endingPanel.SetActive(false);
+        bestScore = PlayerPrefs.GetInt("BestScore");
+        if (PlayerPrefs.GetInt("Multiplayer") == 1)
+        {
+            stickController.SetActive(false);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        UpdateScore();
-
         if (PlayerPrefs.GetInt("Finish") == 1)
         {
             StopGame();
+        }
+        else
+        {
+            UpdateScore();
         }
     }
     private void UpdateScore()
@@ -34,7 +42,6 @@ public class GameManager : MonoBehaviour
         {
             bestScore++;
             PlayerPrefs.SetInt("BestScore", bestScore);
-            PlayerPrefs.Save();
         }
     }
     public void PrevScene()
@@ -52,6 +59,7 @@ public class GameManager : MonoBehaviour
     }
     private void StopGame()
     {
+        stickController.SetActive(false);
         endingPanel.SetActive(true);
         Time.timeScale = 0;
     }

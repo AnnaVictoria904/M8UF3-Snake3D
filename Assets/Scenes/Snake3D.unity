@@ -3099,6 +3099,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentScore: {fileID: 778077120}
   endingPanel: {fileID: 524225955}
+  stickController: {fileID: 1242198451}
 --- !u!1 &1572654982
 GameObject:
   m_ObjectHideFlags: 0
@@ -3429,16 +3430,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1896339333}
-  - component: {fileID: 1896339332}
   - component: {fileID: 1896339331}
   - component: {fileID: 1896339330}
+  - component: {fileID: 1896339334}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &1896339330
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3473,7 +3474,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1896339328}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9cab753667deb0a4c98491ae4ceaec39, type: 3}
   m_Name: 
@@ -3482,22 +3483,6 @@ MonoBehaviour:
   RotationSpeed: 240
   JumpSpeed: 7
   MoveStick: {fileID: 1242198453}
---- !u!114 &1896339332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1896339328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7cae71a1683d4421ba01314a003557e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  bodySpeed: 5
-  steerSpeed: 180
-  bodyPrefab: {fileID: 7697594874439055314, guid: 1da05ee8632e217408fe662c93b2a87e, type: 3}
 --- !u!4 &1896339333
 Transform:
   m_ObjectHideFlags: 0
@@ -3516,6 +3501,22 @@ Transform:
   - {fileID: 1047792274}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1896339334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896339328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab69edd15fc3c804fa66561f46fd109b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  bodySpeed: 5
+  steerSpeed: 180
+  bodyPrefab: {fileID: 7697594874439055314, guid: 1da05ee8632e217408fe662c93b2a87e, type: 3}
 --- !u!1 &1974940785
 GameObject:
   m_ObjectHideFlags: 0

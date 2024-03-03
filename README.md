@@ -10,4 +10,8 @@
 
 ---
 
+En el dia 03/03/2024 he pogut corregir el botó de borrar el best score i he pogut implementar l'opció multijugador en l'editor.
+
+---
+
 [Build WebGL](https://play.unity.com/mg/other/webgl-builds-393056)
