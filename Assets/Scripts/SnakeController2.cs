@@ -30,6 +30,7 @@ public class SnakeController2 : MonoBehaviour
 
     void Start()
     {
+        waiter = true;
         PlayerPrefs.SetInt("Score", 0);
         GrowSnake();
         GrowSnake();
@@ -38,6 +39,7 @@ public class SnakeController2 : MonoBehaviour
         GrowSnake();
         GrowSnake();
         GrowSnake();
+        StartCoroutine(eatTimer());
 
         positionHistory.Insert(0, transform.position);
         InvokeRepeating("UpdatePositionHistory", 0f, 0.01f);
@@ -107,7 +109,7 @@ public class SnakeController2 : MonoBehaviour
             PlayerPrefs.SetInt("Score", score);
             Destroy(other.gameObject);
         }
-        if (other.CompareTag("Body") && score > 0 && waiter == false)
+        if (other.CompareTag("Body") && waiter == false)
         {
             PlayerPrefs.SetInt("Finish", 1);
         }

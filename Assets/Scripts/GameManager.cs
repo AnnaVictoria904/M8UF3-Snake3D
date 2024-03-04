@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
     }
     public void EraseBest()
     {
+        PlayerPrefs.SetInt("Score", 0);
         PlayerPrefs.SetInt("BestScore", 0);
         bestScore = 0;
         PlayerPrefs.Save();

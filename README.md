@@ -14,4 +14,8 @@ En el dia 03/03/2024 he pogut corregir el botó de borrar el best score i he pog
 
 ---
 
+04/04/2024: Resolt uns comportaments extranys en quant a eliminar el best score i les col·lisions en el joc.
+
+---
+
 [Build WebGL](https://play.unity.com/mg/other/webgl-builds-393056)
